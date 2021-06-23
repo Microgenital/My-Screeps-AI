@@ -1,11 +1,15 @@
 let roleBuilder = require("role.builder");
-// TODO: Wenn irgendwo Energie gedroppt wird (z.B. durch Tod des Creeps), soll das bevorzugt aufgehoben werden.
 let roleHarvester = {
 	/** @param {Creep} creep **/
 	run: function (creep) {
 		if (creep.store.getFreeCapacity() > 0) {
 			let sources = creep.room.find(FIND_SOURCES);
-			if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
+			let sources_dropped = creep.room.find(FIND_DROPPED_RESOURCES);
+			if (sources_dropped > 0) { // Pickup dropped energy first. NOT TESTED YET
+				if (creep.pickup(sources_dropped[0]) == ERR_NOT_IN_RANGE) {
+					creep.moveTo(sources_dropped[0]);
+				}
+			} else if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) { // if theres no dropped energy, go mining.
 				creep.moveTo(sources[0], { visualizePathStyle: { stroke: "#ffaa00" } });
 			}
 		} else {
