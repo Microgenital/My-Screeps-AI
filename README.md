@@ -15,11 +15,11 @@ Who wants can of course participate, give me tips etc...
 
 Please dont judge me for my bad code. If it works, it works :)
 
-So, what can it do in the current state?
--> The script automatically builds roads to energy sources and room controller
--> Its harvesting (currently only from 1 Energy Source)
--> It spawns creeps, (you can controll how many creeps you want in "creepGenerator.js")
--> it repairs up to 50%
+So, what can it do in the current state?<br>
+-> The script automatically builds roads to energy sources and room controller<br>
+-> Its harvesting (currently only from 1 Energy Source)<br>
+-> It spawns creeps, (you can controll how many creeps you want in "creepGenerator.js")<br>
+-> it repairs up to 50%<br>
 
 Its still in a really early state, so please dont expect an AI thats winning the game :D
 
