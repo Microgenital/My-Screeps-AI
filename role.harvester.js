@@ -5,7 +5,7 @@ let roleHarvester = {
 		if (creep.store.getFreeCapacity() > 0) {
 			let sources = creep.room.find(FIND_SOURCES);
 			let sources_dropped = creep.room.find(FIND_DROPPED_RESOURCES);
-			if (sources_dropped > 0) { // Pickup dropped energy first.
+			if (sources_dropped > 0) { // Pickup dropped energy first. NOT TESTED YET
 				if (creep.pickup(sources_dropped[0]) == ERR_NOT_IN_RANGE) {
 					creep.moveTo(sources_dropped[0]);
 				}
