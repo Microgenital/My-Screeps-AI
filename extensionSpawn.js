@@ -8,7 +8,7 @@ let extensionSpawn = {
 		let targetPos;
 		let roadToController = "roadToController";
 
-		// Todo: Automatisches bauen von erweiterungen eingügen
+		// TODO: add script to automatically build extensions
 
 		for (let i in sources) {
 			let newMemorySourceName = memorySourceName + memorySet;
@@ -16,7 +16,7 @@ let extensionSpawn = {
 			if (Game.spawns["Spawn1"].memory[newMemorySourceName] == undefined) {
 				Game.spawns["Spawn1"].memory[newMemorySourceName] = false;
 			}
-			// FIXME: Manchmal baut er die Straße nicht bis zum Punkt wo sie hin soll.
+			// FIXME: Sometimes he does not build the road to the point where it should go.
 			if (Game.spawns["Spawn1"].memory[newMemorySourceName] == false) {
 				startPos = Game.spawns["Spawn1"].pos;
 				targetPos = sources[memorySet].pos;

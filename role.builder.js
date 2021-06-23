@@ -8,7 +8,6 @@ let roleBuilder = {
 			creep.memory.building = true;
 			creep.say("🚧 Bauen");
 		}
-		// TODO: Repair funktion einbauen, evtl auch seperate repairbots
 		if (creep.memory.building) {
 			let targets = creep.room.find(FIND_CONSTRUCTION_SITES);
 			if (targets.length) {
@@ -35,9 +34,9 @@ let roleBuilder = {
 	},
 };
 
-// TODO: Random Mining Sourcen einfügen, damit nicht alle miner auf einem fleck stehen.
-// TODO: evtl auch das Mining in eine eigene Funktion stecken, damit alle die irgendwie minen gehen das
-// gleiche "Miner-Script" nutzen
+// TODO: Insert random mining sources so that not all miners are in one spot.
+// TODO: maybe also put the mining in a separate function, so that all who go to mine somehow use the same "miner script"
+
 /*
 let list_random = {
 	let choosen_source = _.random(0, 4) == 0;

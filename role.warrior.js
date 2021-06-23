@@ -10,5 +10,5 @@ let roleWarrior = {
 		}
 	},
 };
-// TODO: Warrior darf nicht alleine losziehen, nur dann kämpfen gehen wenn mehr als ?? existieren. Eventuell vorher Sammelpunkt festlegen.
+// TODO: Warrior may not go alone, only go to fight if more than ?? exist. Possibly set a rally point beforehand.
 module.exports = roleWarrior;

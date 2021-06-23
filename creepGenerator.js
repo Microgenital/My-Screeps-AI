@@ -1,7 +1,7 @@
 let creepGenerator = {
 	run: function () {
 		let maxUpgrader = 1;
-		let maxHarvester = 3; 
+		let maxHarvester = 3;
 		let maxBuilder = 3;
 		let maxWarrior = 3;
 		let maxTransfer = 0;
@@ -22,13 +22,13 @@ let creepGenerator = {
 				amountBuilder += 1;
 			} else if (creep.memory.role == "warrior") {
 				amountWarrior += 1;
-			} else if (creep.memory.role == "transfer"){
+			} else if (creep.memory.role == "transfer") {
 				amountTransfer += 1;
 			}
-			
-			// TODO: Heal Creep erstellen, der die Warriors heilen kann.
-			// TODO: Creeps ein "Level" geben, damit einfach erkannt werden kann welche Stufe des Creeps existiert.
-		} 	// TODO: Mehr varianten von Creeps hinzufügen, je nach dem wiviel Raum-Energy zur verfühung stehen kann.
+
+			// TODO: Creating an "Heal" Creep
+			// IDEA: Maybe give creeps an Level, so an living creep can be killed for an updated one.
+		}
 		let creepName = "Creep" + Game.time;
 
 		if (amountHarvester < maxHarvester) {
@@ -79,7 +79,7 @@ let creepGenerator = {
 			}
 		}
 
-		// TODO: Warrior ist extem schwach, da muss was gemacht werden.
+		// TODO: Warrior is still very weak, has to be updated
 		if (amountWarrior < maxWarrior) {
 			Game.spawns["Spawn1"].spawnCreep([MOVE, ATTACK, ATTACK], creepName, {
 				memory: { role: "warrior" },

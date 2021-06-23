@@ -30,7 +30,7 @@ let roleHarvester = {
 					creep.moveTo(targets[0], { visualizePathStyle: { stroke: "#ffffff" } });
 				}
 			} else {
-				// Harvester, die nichts zu tun haben, werden zu Buildern, bis wieder irgendwo energie gebraucht wird.
+				// Harvesters that have nothing to do become builders until energy is needed again somewhere.
 				//roleBuilder.run(creep);
 				creep.moveTo(Game.spawns["Spawn1"]);
 			}
