@@ -36,22 +36,25 @@ let extensionSpawn = {
 			}
 			memorySet += 1;
 		}
-/* TODO: This is not Working, im not sure why...
 		if (Game.spawns["Spawn1"].memory[roadToController] == undefined) {
 			Game.spawns["Spawn1"].memory[roadToController] = false;
 		}
 		if (Game.spawns["Spawn1"].memory[roadToController] == false) {
-			startPos = Game.spawns["Spawn1"].pos;
-			targetPos = Game.rooms[roomName].find(FIND_STRUCTURES, {
+			let startPos2 = Game.spawns["Spawn1"].pos;
+			let targetPos2 = Game.rooms[roomName].find(FIND_MY_STRUCTURES, {
 				filter: (structure) => {
 					return structure.structureType == STRUCTURE_CONTROLLER;
 				},
 			});
-			roomName = Game.spawns["Spawn1"].pos.roomName;
-			let path2 = Game.rooms[roomName].findPath(startPos, targetPos);
-			console.log(roomName);
-			for (i in path2) {
-				if (path2[i].x == targetPos.x && path2[i].y == targetPos.y) {
+
+			/*
+			because "find" is giving me an array, i have to index it in the path generation
+			but there is only 1 room controller per room so i can hardcode it.
+			*/
+
+			let path2 = Game.rooms[roomName].findPath(startPos2, targetPos2[0].pos);
+			for (let i in path2) {
+				if (path2[i].x == targetPos2[0].pos.x && path2[i].y == targetPos2[0].pos.y) {
 					continue;
 				} else {
 					Game.rooms[roomName].createConstructionSite(
@@ -63,7 +66,6 @@ let extensionSpawn = {
 			}
 		}
 		Game.spawns["Spawn1"].memory[roadToController] = true;
-		*/
 	},
 };
 module.exports = extensionSpawn;
