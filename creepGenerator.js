@@ -1,7 +1,7 @@
 let creepGenerator = {
 	run: function () {
 		let maxUpgrader = 1;
-		let maxHarvester = 3; // E38N34    /    E37N33     /     E42N12
+		let maxHarvester = 3; 
 		let maxBuilder = 3;
 		let maxWarrior = 3;
 		let maxTransfer = 0;
