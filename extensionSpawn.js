@@ -51,10 +51,10 @@ let extensionSpawn = {
 			because "find" is giving me an array, i have to index it in the path generation
 			but there is only 1 room controller per room so i can hardcode it.
 			*/
-			
+
 			let path2 = Game.rooms[roomName].findPath(startPos2, targetPos2[0].pos);
 			for (let i in path2) {
-				if (path2[i].x == targetPos2.x && path2[i].y == targetPos2.y) {
+				if (path2[i].x == targetPos2[0].pos.x && path2[i].y == targetPos2[0].pos.y) {
 					continue;
 				} else {
 					Game.rooms[roomName].createConstructionSite(
